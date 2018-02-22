@@ -1,0 +1,11 @@
+This program creates 18 simulataeous children which will randomly request/release resources and eventually terminate. The OSS (master) process will grant resources if they are available or add them to a waitlist until that resource is available. Children and Master communicate via a message queue. Occassionally, children processes may deadlock. Every second, OSS will run a deadlock detection routine and kill the 1st process detected to be in deadlock. Once its processes are freed, they will distributed to waiting processes.
+
+
+To make this program:
+make oss child
+
+To run this program with verbose output:
+./oss -v
+
+To run this program with reduced output:
+./oss
